@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model Providigm.Sso.TokenResponse
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Abaqis Login</h2>
+        <p>
+            An example of implementing Abaqis Single Sign On using ASP.NET MVC
+        </p>
+        
+        @using (Html.BeginForm("LoginToAbaqis", "Home"))
+        {
+            <button type="submit">Code Login To Abaqis</button>
+        }
+        <br/>
+        
+        <form action="https://test.abaqis.com/sso/token_login" method="post">
+            <input type="hidden" class="text" value="@Model.Token" id="login_token" name="login_token" />
+            <input type="hidden" class="text" value="http://www.yahoo.com" id="onsessionend" name="onsessionend" />
+            <input type="submit" value="Login to Abaqis">
+        </form>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
