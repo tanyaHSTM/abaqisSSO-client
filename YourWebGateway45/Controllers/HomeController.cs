@@ -31,26 +31,5 @@ namespace YourWebGateway45.Controllers
 
             return View();
         }
-
-        public async Task<ActionResult> LoginToAbaqis()
-        {
-            var ssoClient = new SsoClient();
-            var tokenResponse = await ssoClient.RequestTokenAsync("goodsam11", "5473d95926b2d0e00730786a");
-            var response = await ssoClient.AbaqisLoginPostAsync(tokenResponse.Token, "http://www.yahoo.com");
-
-            var cookieToSet = response.Headers.GetValues("Set-Cookie").FirstOrDefault();
-            if (cookieToSet != null)
-            {
-                var cookies = cookieToSet.Split(';');
-                foreach (var cookie in cookies)
-                {
-                    var cookiePair = cookie.Split('=');
-                    Response.Cookies.Add(new HttpCookie(cookiePair[0], cookiePair.Length == 2 ? cookiePair[1] : string.Empty));
-
-                }
-            }
-
-            return new RedirectResult(response.Headers.Location.ToString());
-        }
     }
 }

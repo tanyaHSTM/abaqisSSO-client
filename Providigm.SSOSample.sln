@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourWebGateway", "YourWebGa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourWebGateway45", "YourWebGateway45\YourWebGateway45.csproj", "{282C76AD-5B82-418C-A6B3-6DA24BD39F45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourWebForm", "YourWebForm\YourWebForm.csproj", "{A9D86AC9-943A-4F77-927D-417F4E8AC30C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{282C76AD-5B82-418C-A6B3-6DA24BD39F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{282C76AD-5B82-418C-A6B3-6DA24BD39F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{282C76AD-5B82-418C-A6B3-6DA24BD39F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9D86AC9-943A-4F77-927D-417F4E8AC30C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D86AC9-943A-4F77-927D-417F4E8AC30C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D86AC9-943A-4F77-927D-417F4E8AC30C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D86AC9-943A-4F77-927D-417F4E8AC30C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
