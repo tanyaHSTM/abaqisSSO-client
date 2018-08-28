@@ -28,13 +28,15 @@
 
                     var form = document.createElement("form");
                     form.method = "post";
-                    form.action = 'https://test.abaqis.com/sso/token_login';
-                    var tokenInput = document.createElement("hidden");
+                    form.action = "https://test.abaqis.com/sso/token_login";
+                    var tokenInput = document.createElement("input");
+                    tokenInput.setAttribute("type", "hidden");
                     tokenInput.setAttribute("name", "login_token");
                     tokenInput.setAttribute("value", "<%= Token %>");
                     form.appendChild(tokenInput);
 
-                    var sessionEndInput = document.createElement("hidden");
+                    var sessionEndInput = document.createElement("input");
+                    sessionEndInput.setAttribute("type", "hidden");
                     sessionEndInput.setAttribute("name", "onsessionend");
                     sessionEndInput.setAttribute("value", "<%= SessionEnd %>");
                     form.appendChild(sessionEndInput);
