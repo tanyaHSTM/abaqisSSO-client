@@ -16,7 +16,7 @@ namespace Providigm.Sso
 
         public TokenResponse(string response)
         {
-            var lines = response.Split('\n');
+            var lines = response.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
             if (lines.Length < 3)
             {
                 throw new Exception("Invalid response");
@@ -39,7 +39,10 @@ namespace Providigm.Sso
             if (requestStatusFlagLine.StartsWith("0x", StringComparison.CurrentCultureIgnoreCase) ||
                 requestStatusFlagLine.StartsWith("&H", StringComparison.CurrentCultureIgnoreCase)) 
             {
-                hex = requestStatusFlagLine.Substring(2);
+                // The error codes are returned with the error message appended
+                // i.e. 0x07 - Invalid cse type
+                // The following removes the hex prefix and the trailing string message so that we just parse "07"
+                hex = requestStatusFlagLine.Substring(2,2);
             }
 
             if (!int.TryParse(hex, NumberStyles.HexNumber, CultureInfo.CurrentCulture, out var value))
